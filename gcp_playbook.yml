@@ -9,6 +9,11 @@
       region: "us-central1"
 
   tasks:
+   # Install multi python packages with version specifiers
+   - pip:
+       name:
+         - requests
+         - google-auth
    - name: create a disk
      gcp_compute_disk:
          name: 'disk-instance'
