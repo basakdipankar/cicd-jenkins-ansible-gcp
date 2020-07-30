@@ -4,7 +4,7 @@
   vars:
       gcp_project: DevOpsE2Training
       gcp_cred_kind: serviceaccount
-      gcp_cred_file: "{{ secret_file }}"
+      gcp_cred_file: "{{ secret_file | to_json }}"
       zone: "us-central1-a"
       region: "us-central1"
 
