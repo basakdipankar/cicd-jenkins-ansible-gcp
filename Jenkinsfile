@@ -6,5 +6,6 @@ pipeline {
           sh "ansible-playbook gcp_playbook.yml --extra-vars secret_file=${gcp_cred_file}"
         }
       }
+    }
   }
 }
