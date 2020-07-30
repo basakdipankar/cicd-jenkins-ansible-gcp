@@ -2,9 +2,9 @@
   hosts: localhost
   gather_facts: no
   vars:
-      gcp_project: my-project
+      gcp_project: DevOpsE2Training
       gcp_cred_kind: serviceaccount
-      gcp_cred_file: /home/my_account.json
+      gcp_cred_file: "{{ secret_file }}"
       zone: "us-central1-a"
       region: "us-central1"
 
@@ -12,7 +12,7 @@
    - name: create a disk
      gcp_compute_disk:
          name: 'disk-instance'
-         size_gb: 50
+         size_gb: 10
          source_image: 'projects/ubuntu-os-cloud/global/images/family/ubuntu-1604-lts'
          zone: "{{ zone }}"
          project: "{{ gcp_project }}"
@@ -47,7 +47,7 @@
      gcp_compute_instance:
          state: present
          name: test-vm
-         machine_type: n1-standard-1
+         machine_type: f1-micro
          disks:
            - auto_delete: true
              boot: true
@@ -73,10 +73,10 @@
       add_host: hostname={{ address.address }} groupname=new_instances
 
 
-- name: Manage new instances
-  hosts: new_instances
-  connection: ssh
-  sudo: True
-  roles:
-    - base_configuration
-    - production_server
+# - name: Manage new instances
+#   hosts: new_instances
+#   connection: ssh
+#   sudo: True
+#   roles:
+#     - base_configuration
+#     - production_server
