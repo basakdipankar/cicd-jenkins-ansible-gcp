@@ -100,7 +100,7 @@
 - name: Manage new instances
   hosts: new_instances
   connection: ssh
-  sudo: True
+  become: yes
   #become_user: jenkins
   roles:
     - role: prerequisite
