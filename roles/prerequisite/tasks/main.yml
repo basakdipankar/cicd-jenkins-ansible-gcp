@@ -1,0 +1,6 @@
+- name: Install all the required packages which are specified in list_of_packages file
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_file:
+    - list_of_packages

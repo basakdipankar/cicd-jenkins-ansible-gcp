@@ -82,10 +82,13 @@
      add_host: hostname={{ address.address }} groupname=new_instances
 
 
-# - name: Manage new instances
-#   hosts: new_instances
-#   connection: ssh
-#   sudo: True
-#   roles:
-#     - base_configuration
-#     - production_server
+- name: Manage new instances
+  hosts: new_instances
+  connection: ssh
+  sudo: True
+  roles:
+    - role: prerequisite
+    - role: deployment
+      vars:
+        app_img: springbootapp
+        app_port: 8885
