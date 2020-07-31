@@ -104,7 +104,7 @@
   hosts: new_instances
   connection: ssh
   become: yes
-  #become_user: jenkins
+  become_method: sudo
   roles:
     - role: prerequisite
     - role: deployment
