@@ -100,7 +100,8 @@
 - name: Manage new instances
   hosts: new_instances
   connection: ssh
-  become: True
+  #become: True
+  become_user: dbasak2013
   roles:
     - role: prerequisite
     - role: deployment
