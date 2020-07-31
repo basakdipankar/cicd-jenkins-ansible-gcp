@@ -18,7 +18,7 @@ pipeline {
                 //     writeFile file: 'key/private.json', text: readFile(gcp_cred_file)
                 //     sh "ansible-playbook -vvv gcp_playbook.yml"
                 // }
-                sh "ansible-playbook -vvv gcp_playbook.yml"
+                sh "ansible-playbook -vvvv gcp_playbook.yml"
             }
             /*post {
                 always {
