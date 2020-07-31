@@ -105,12 +105,12 @@
      add_host: 
        hostname: "{{ address.address }}"
        groupname: "new_instances"
-       ansible_ssh_extra_args: "-o StrictHostKeyChecking=no -o ConnectTimeout=120"
+       ansible_ssh_extra_args: "-o StrictHostKeyChecking=no"
        ansible_ssh_common_args: "-o ConnectTimeout=120"
        #ansible_ssh_user: "dbasak2013"
 
 - name: Manage new instances
-  hosts: new_instances
+  hosts: "new_instances"
   connection: ssh
   become: yes
   become_method: sudo
