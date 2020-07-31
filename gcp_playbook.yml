@@ -41,6 +41,22 @@
            - https://www.googleapis.com/auth/compute
          state: present
      register: network
+     
+   - name: create a firewall
+     gcp_compute_firewall:
+       name: app_port_ssh
+       allowed:
+         - ip_protocol: tcp
+           ports:
+           - '22'
+           - '8080'
+       network: "projects/{{ gcp_project }}/global/networks/{{ network }}"
+       project: "{{ gcp_project }}"
+       auth_kind: "{{ gcp_cred_kind }}"
+       service_account_file: "{{ gcp_cred_file }}"
+       state: present
+    
+    
    - name: create a address
      gcp_compute_address:
          name: 'address-instance'
