@@ -4,7 +4,8 @@
   vars:
       gcp_project: wise-coyote-281220
       gcp_cred_kind: serviceaccount
-      gcp_cred_file: ./key/private.json
+      # gcp_cred_file: ./key/private.json
+      gcp_cred_file: "{{ lookup('env','gcp_cred_file') }}"
       zone: "us-central1-a"
       region: "us-central1"
 
