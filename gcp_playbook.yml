@@ -105,6 +105,7 @@
      add_host: 
        hostname: "{{ address.address }}"
        groupname: "new_instances"
+       ansible_ssh_extra_args: "-o StrictHostKeyChecking=no"
        #ansible_ssh_user: "dbasak2013"
 
 - name: Manage new instances
