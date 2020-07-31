@@ -44,7 +44,7 @@
      
    - name: create a firewall
      gcp_compute_firewall:
-       name: app_port_ssh
+       name: 'app-port-ssh'
        allowed:
          - ip_protocol: tcp
            ports:
