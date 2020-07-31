@@ -107,7 +107,7 @@
        groupname: "new_instances"
        #ansible_ssh_extra_args: "-o StrictHostKeyChecking=no"
        #ansible_ssh_common_args: "-o ConnectTimeout=120"
-       #ansible_ssh_user: "dbasak2013"
+       ansible_ssh_user: "dbasak2013"
 
 - name: Manage new instances
   hosts: "new_instances"
