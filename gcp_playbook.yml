@@ -95,7 +95,10 @@
      wait_for: host={{ address.address }} port=22 delay=10 timeout=300
 
    - name: Add host to groupname
-     add_host: hostname={{ address.address }} groupname=new_instances
+     add_host: 
+       hostname: "{{ address.address }}"
+       groupname: "new_instances"
+       ansible_ssh_user: "dbasak2013"
 
 - name: Manage new instances
   hosts: new_instances
