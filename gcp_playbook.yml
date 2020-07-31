@@ -101,7 +101,7 @@
   hosts: new_instances
   connection: ssh
   #become: True
-  become_user: dbasak2013
+  become_user: jenkins
   roles:
     - role: prerequisite
     - role: deployment
