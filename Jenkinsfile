@@ -3,11 +3,11 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
-            steps {
-                git credentialsId: 'github_token', url: 'https://github.com/dbasak2013/jenkins-gcp-ansible.git'
-            }
-        }
+        //stage('Clone') {
+        //    steps {
+        //        git credentialsId: 'github_token', url: 'https://github.com/dbasak2013/jenkins-gcp-ansible.git'
+        //    }
+        //}
         
         stage('GCP') {
             environment {
