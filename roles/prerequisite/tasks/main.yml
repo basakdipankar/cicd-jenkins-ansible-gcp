@@ -2,8 +2,7 @@
   apt:
     name: "{{ item }}"
     state: present
-  with_file:
-    - list_of_packages
+  loop: "{{ lookup('file', 'list_of_packages').splitlines() }}"
 
 - name: Install multi python packages with version specifiers
   pip:
