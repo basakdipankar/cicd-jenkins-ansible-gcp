@@ -12,6 +12,7 @@ pipeline {
         stage('GCP') {
             environment {
                 gcp_cred_file=credentials("gcp_service_account")
+                ansible_gcp_ssh_key_file=credentials("ansible_gcp_ssh_keys")
             }
             steps {
                 // withCredentials([file(credentialsId: 'gcp_service_account', variable: 'gcp_cred_file')]) {
