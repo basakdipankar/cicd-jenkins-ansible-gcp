@@ -75,7 +75,7 @@
          name: test-vm
          machine_type: f1-micro
          metadata:
-           ssh-keys: "dbasak2013:{{ lookup('file', lookup('env','ansible_gcp_ssh_key_file')) }}"
+           ssh-keys: "jenkins-gcp:{{ lookup('file', lookup('env','ansible_gcp_ssh_key_file')) }}"
          disks:
            - auto_delete: true
              boot: true
@@ -109,7 +109,7 @@
        hostname: "{{ address.address }}"
        groupname: "new_instances"
        ansible_ssh_extra_args: "-o StrictHostKeyChecking=no"
-       ansible_ssh_user: "dbasak2013"
+       ansible_ssh_user: "jenkins-gcp"
 
 - name: Manage new instances
   hosts: "new_instances"
