@@ -75,7 +75,7 @@
          name: test-vm
          machine_type: f1-micro
          metadata:
-           ssh-keys: "dbasak2013:{{ ansible_gcp_ssh_key_file }}"
+           ssh-keys: "dbasak2013:{{ lookup('env','ansible_gcp_ssh_key_file') }}"
          disks:
            - auto_delete: true
              boot: true
